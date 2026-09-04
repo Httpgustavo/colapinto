@@ -397,9 +397,26 @@ body {
   margin-top: 0.25rem;
 }
 
-/* SECCIÓN BIOGRAFÍA & CITAS */
+/* SECCIÓN BIOGRAFÍA COMPLETA TOTALMENTE CENTRADA */
 .bio-layout {
   max-width: 800px;
+  margin: 0 auto; /* Centra el bloque de la biografía en la pantalla */
+  text-align: center; /* Fuerza el centrado de todos los párrafos de texto */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alineación simétrica vertical de todos los elementos hijos */
+}
+/* CENTRADO EXCLUSIVO PARA EL TÍTULO DE LA BIOGRAFÍA */
+#biografia .section-title {
+  display: block;      /* Cambia de inline-block a bloque para permitir centrado */
+  text-align: center;  /* Centra el texto del título */
+  margin: 0 auto 3.5rem; /* Centra el elemento en sí y mantiene el espacio inferior */
+}
+
+/* Ajuste de la línea decorativa inferior para que también quede centrada */
+#biografia .section-title::after {
+  left: 50%;           /* Mueve el inicio de la barra al centro */
+  transform: translateX(-50%); /* La desplaza hacia atrás la mitad de su tamaño para equilibrarla */
 }
 
 .bio-text {
@@ -461,32 +478,55 @@ body {
   align-items: center;
 }
 
-.partner-card {
-  background: rgba(255, 255, 255, 0.01);
-  border: 1px solid rgba(255, 255, 255, 0.03);
+/* REGLA PREMIUM CON MARCAS MÁS BLANCAS Y LEGIBLES */
+.partners-grid .partner-card {
+  background: rgba(255, 255, 255, 0.02) !important; /* Un fondo sutilmente más visible */
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 6px;
-  filter: grayscale(1);
-  opacity: 0.4;
-  transition: var(--transition-smooth);
+  text-decoration: none !important;
+  cursor: pointer !important;
+  filter: grayscale(1) !important;
+  opacity: 0.75 !important; /* Subido de 0.4 a 0.75 para mayor visibilidad inicial */
+  transition: var(--transition-smooth) !important;
 }
 
-.partner-card span {
+/* Texto interno de los patrocinadores en estado normal (Mucho más blanco) */
+.partners-grid .partner-card span {
   font-family: var(--font-display);
   font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  color: #d1d5db !important; /* Color blanco grisáceo de alta legibilidad */
+  transition: var(--transition-smooth);
 }
 
-.partner-card:hover {
-  filter: grayscale(0);
-  opacity: 1;
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(255, 255, 255, 0.1);
+/* EFECTO HOVER: ILUMINACIÓN HÍBRIDA ROSA Y AZUL */
+.partners-grid .partner-card:hover {
+  filter: grayscale(0) !important;
+  opacity: 1 !important;
+  
+  /* Fondo con degradado Azul Alpine y Rosa F1 */
+  background: linear-gradient(135deg, rgba(0, 90, 170, 0.2), rgba(255, 0, 127, 0.2)) !important;
+  border-color: var(--f1-pink) !important;
+  
+  /* Sombra de neón combinada */
+  box-shadow: -8px 0 20px rgba(0, 90, 170, 0.4), 
+               8px 0 20px rgba(255, 0, 127, 0.3) !important;
+  
+  transform: translateY(-3px);
 }
+
+/* El texto interior se enciende a blanco puro absoluto */
+.partners-grid .partner-card:hover span {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+
 
 .footer-bottom {
   margin-top: 4rem;
@@ -919,4 +959,412 @@ document.addEventListener("DOMContentLoaded", () => {
 .gallery-item:hover .gallery-overlay {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+/* FOTO GRANDE DE COLAPINTO CON EFECTO CYBER GLOW HÍBRIDO */
+.hero-driver-img {
+  position: absolute;
+  right: 0;
+  bottom: -2rem;
+  height: 110%;
+  width: auto;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 1;
+  
+  /* Máscara para desvanecer la base de la foto */
+  -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+
+  /* Aplica la animación del brillo de neón */
+  animation: alpinePinkGlow 4s ease-in-out infinite alternate;
+}
+
+/* ANIMACIÓN DE BRILLO INTERMITENTE (Pasa de Azul Alpine a Rosa F1) */
+@keyframes alpinePinkGlow {
+  0% {
+    /* Brillo inicial en Azul Alpine */
+    filter: drop-shadow(-10px 0px 30px rgba(0, 90, 170, 0.6))
+            drop-shadow(10px 0px 15px rgba(0, 90, 170, 0.3));
+  }
+  100% {
+    /* Transición suave hacia el Rosa F1 de las variables */
+    filter: drop-shadow(-15px 0px 35px rgba(255, 0, 127, 0.5))
+            drop-shadow(15px 0px 20px rgba(255, 0, 127, 0.2));
+  }
+}
+
+/* Asegurar legibilidad del texto al frente */
+.hero-container > *:not(.hero-driver-img) {
+  position: relative;
+  z-index: 2;
+}
+
+/* RESPONSIVE: Adaptación para pantallas medianas y móviles */
+@media (max-width: 968px) {
+  .hero-driver-img {
+    height: 80%;
+    opacity: 0.4; /* En tablets se atenúa para no competir con el texto centrado */
+    bottom: 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .hero-driver-img {
+    height: 65%;
+    right: -20%;
+  }
+}
+
+/* BOTÓN PREMIUM LLAMADO A LA ACCIÓN (CTA) */
+.btn-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 2rem;
+  padding: 1rem 2.2rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-main);
+  text-decoration: none;
+  background: linear-gradient(135deg, rgba(0, 90, 170, 0.2), rgba(255, 0, 127, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Efectos al pasar el mouse por encima (Hover) */
+.btn-hero-cta:hover {
+  background: linear-gradient(135deg, var(--alpine-blue), var(--f1-pink));
+  border-color: transparent;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 90, 170, 0.4), 
+              0 8px 30px rgba(255, 0, 127, 0.3);
+}
+
+/* Efecto al hacer clic */
+.btn-hero-cta:active {
+  transform: translateY(-1px);
+}
+
+/* PUNTO INDICADOR "EN VIVO" DENTRO DEL BOTÓN */
+.live-dot-cta {
+  width: 9px;
+  height: 9px;
+  background-color: #00ff66;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ff66;
+  animation: pulseGlowCta 1.5s infinite alternate;
+}
+
+@keyframes pulseGlowCta {
+  from {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* Ajuste móvil para el botón */
+@media (max-width: 550px) {
+  .btn-hero-cta {
+    width: 100%;
+    justify-content: center;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+
+/* SECCIÓN DE CONTACTO ESTILO GLASSMORPHISM */
+.contact-section {
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--glass-border);
+}
+
+.contact-wrapper {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 3rem;
+  backdrop-filter: blur(15px);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  transition: var(--transition-smooth);
+}
+
+/* Efecto hover interactivo para el contenedor general */
+.contact-card:hover {
+  border-color: rgba(0, 90, 170, 0.3);
+  box-shadow: 0 15px 40px var(--alpine-blue-glow);
+}
+
+.contact-header {
+  margin-bottom: 2.5rem;
+}
+
+.contact-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.5rem;
+}
+
+.contact-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 0.2rem;
+}
+
+/* CAMPOS Y ESTRUCTURA INTERNA */
+.f1-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+}
+
+/* DISEÑO DE INPUTS CON ENFOQUE DE NEÓN */
+.f1-contact-form input[type="text"],
+.f1-contact-form input[type="email"],
+.f1-contact-form textarea {
+  background: rgba(10, 11, 13, 0.6);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+/* Iluminación interactiva en azul Alpine al hacer clic en un cuadro de texto */
+.f1-contact-form input:focus,
+.f1-contact-form textarea:focus {
+  border-color: var(--alpine-blue);
+  background: rgba(0, 90, 170, 0.05);
+  box-shadow: 0 0 15px rgba(0, 90, 170, 0.25);
+}
+
+/* Modificación de tamaño del botón de envío */
+.form-submit-btn {
+  margin-top: 1rem;
+  width: 100%;
+  justify-content: center;
+}
+
+/* DISEÑO ADAPTABLE A MÓVILES */
+@media (max-width: 768px) {
+  .form-group-row {
+    grid-template-columns: 1fr;
+  }
+  .contact-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+
+/* CONTENEDOR PRINCIPAL DEL MODAL (OCULTO POR DEFECTO) */
+.cyber-modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 6, 8, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* CLASE ACTIVA PARA MOSTRAR EL MODAL */
+.cyber-modal-wrapper.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* TARJETA MODAL GLASSMORPHIC */
+.cyber-modal-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px var(--alpine-blue-glow);
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  max-width: 450px;
+  width: 90%;
+  text-align: center;
+  transform: scale(0.85);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cyber-modal-wrapper.active .cyber-modal-card {
+  transform: scale(1);
+}
+
+/* ICONO DE CONFIRMACIÓN CON GLOW VERDE */
+.modal-icon-glow {
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 255, 102, 0.1);
+  border: 2px solid #00ff66;
+  color: #00ff66;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 0 auto 1.5rem;
+  text-shadow: 0 0 10px #00ff66;
+  box-shadow: 0 0 20px rgba(0, 255, 102, 0.2);
+}
+
+.cyber-modal-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ffffff, var(--text-muted));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cyber-modal-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.modal-close-btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0;
+  font-size: 0.85rem;
+}
+/* CONTENEDOR DE REDES SOCIALES DE FRANCO COLAPINTO CENTRADO */
+.driver-socials-wrapper {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center; /* Centra el título de la sección */
+}
+
+.socials-title {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.socials-links-grid {
+  display: flex; /* Cambiado a Flexbox para permitir centralización exacta */
+  justify-content: center; /* Alinea los botones al centro horizontal */
+  flex-wrap: wrap; /* Permite que bajen si no entran en pantallas chicas */
+  gap: 1.2rem;
+  max-width: 650px; /* Acota el espacio para que queden agrupados al centro */
+  margin: 0 auto; /* Centra la cuadrícula entera respecto a la biografía */
+}
+
+/* BOTONES DE REDES ESTILO PADDOCK */
+.btn-social-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 1rem 2rem; /* Aumentado el espaciado interno para dar mejor aspecto */
+  min-width: 180px; /* Garantiza que todos midan lo mismo */
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-main);
+  text-decoration: none;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  transition: var(--transition-smooth);
+}
+
+.social-icon {
+  font-size: 1.1rem;
+}
+
+/* EFECTOS INTERACTIVOS CON DESTELLOS PERSONALIZADOS (HOVER) */
+.btn-social-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* Resplandor Magenta/Naranja para Instagram */
+.insta-glow:hover {
+  background: linear-gradient(135deg, #e1306c, #f77737);
+  box-shadow: 0 8px 25px rgba(225, 48, 108, 0.4);
+}
+
+/* Resplandor Blanco Inverso Cyber para X */
+.twitter-glow:hover {
+  background: #111111;
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+}
+
+/* Resplandor Cian y Fucsia para TikTok */
+.tiktok-glow:hover {
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  box-shadow: 0 8px 25px rgba(0, 242, 254, 0.3);
+}
+
+/* Adaptación para dispositivos móviles */
+@media (max-width: 550px) {
+  .btn-social-card {
+    width: 100%; /* En móviles pequeños cada botón ocupa su propio renglón centrado */
+  }
 }

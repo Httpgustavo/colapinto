@@ -1,10 +1,8 @@
 /**
- * CLON FRANCO COLAPINTO F1 2026 - COMPORTAMIENTO Y TELEMETRÍA
+ * CLON FRANCO COLAPINTO F1 2026 - COMPORTAMIENTO, TELEMETRÍA Y COMUNICACIONES
  */
 
-document.addEventListener("DOMContentLoaded", () => 
-    
-    {
+document.addEventListener("DOMContentLoaded", () => {
   
   // 1. MANEJADOR DEL MENÚ MÓVIL ADAPTABLE
   const menuToggle = document.getElementById("menuToggle");
@@ -24,8 +22,7 @@ document.addEventListener("DOMContentLoaded", () =>
     });
   }
 
-  // 2. REPRODUCTOR DE STREAMING DE YOUTUBE
-   // 2. REPRODUCTOR DE STREAMING ADAPTADO PARA MODO LOCAL ARCHIVO
+  // 2. REPRODUCTOR DE STREAMING ADAPTADO PARA MODO LOCAL ARCHIVO
   const playlistItems = document.querySelectorAll(".playlist-item");
   const btnPlayExternal = document.getElementById("btnPlayExternal");
   const videoTitleDisplay = document.getElementById("videoTitleDisplay");
@@ -47,8 +44,7 @@ document.addEventListener("DOMContentLoaded", () =>
     });
   }
 
-
-  // 3. ANIMACIÓN DE ESTADÍSTICAS
+  // 3. ANIMACIÓN DE ESTADÍSTICAS (INTERSECTION OBSERVER)
   const statValues = document.querySelectorAll(".stat-value");
   
   const animateCounter = (element) => {
@@ -88,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () =>
     statsObserver.observe(statsSection);
   }
 
-  // 4. MOTOR DE TELEMETRÍA DINÁMICA
+  // 4. MOTOR DE TELEMETRÍA DINÁMICA (PIT WALL)
   const txtSpeed = document.getElementById("telSpeed");
   const speedBar = document.getElementById("speedBar");
   const txtGear = document.getElementById("telGear");
@@ -161,4 +157,57 @@ document.addEventListener("DOMContentLoaded", () =>
   }
 
   runTelemetryLoop();
+
+  // 5. ENVIÓ DE FORMULARIO (MÉTODO ULTRA-SEGURO ANTIBLOQUEO)
+  const contactForm = document.querySelector(".f1-contact-form");
+  const thankYouModal = document.getElementById("thankYouModal");
+  const closeModalBtn = document.getElementById("closeModalBtn");
+  const submitBtn = document.querySelector(".form-submit-btn");
+
+  if (contactForm && thankYouModal && closeModalBtn && submitBtn) {
+    
+    contactForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.innerHTML = "Transmitiendo datos... 📡";
+      submitBtn.style.opacity = "0.7";
+      submitBtn.style.pointerEvents = "none";
+
+      const formData = new FormData(contactForm);
+
+      fetch("https://web3forms.com", {
+        method: "POST",
+        body: formData
+      })
+      .then(async (response) => {
+        const result = await response.json();
+        if (result.success) {
+          thankYouModal.classList.add("active");
+          contactForm.reset(); 
+        } else {
+          alert("Error en la transmisión: " + result.message);
+        }
+      })
+      .catch((error) => {
+        console.error("Error del sistema:", error);
+        alert("Fallo de conexión en el Pit Wall. Inténtalo de nuevo.");
+      })
+      .finally(() => {
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.style.opacity = "1";
+        submitBtn.style.pointerEvents = "auto";
+      });
+    });
+
+    closeModalBtn.addEventListener("click", () => {
+      thankYouModal.classList.remove("active");
+    });
+
+    thankYouModal.addEventListener("click", (e) => {
+      if (e.target === thankYouModal) {
+        thankYouModal.classList.remove("active");
+      }
+    });
+  }
 });

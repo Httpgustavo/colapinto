@@ -4,278 +4,274 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Franco Colapinto - Perfil Oficial F1 2026</title>
-  <!-- Enlaces limpios a Google Fonts sin saltos de línea -->
-  <link rel="preconnect" href="https://googleapis.com">
-  <link rel="preconnect" href="https://gstatic.com" crossorigin>
-  <link href="https://googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <!-- Fuentes Premium -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <!-- Estilos de la Interfaz -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- NAVBAR PRINCIPAL CON GLASSMORPHISM -->
+  <!-- NAVBAR DE CRISTAL (GLASSMORPHISM) -->
   <nav class="f1-nav">
     <div class="nav-container">
-      <a href="#" class="f1-logo">F1<span>2026</span></a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <a href="#" class="f1-logo">F1 2026<span>™</span></a>
+      <button class="menu-toggle" id="menuToggle">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#biografia">Biografía</a></li>
+        <li><a href="#inicio">Inicio</a></li>
         <li><a href="#estadisticas">Estadísticas</a></li>
-        <li><a href="#videos">Multimedia</a></li>
+        <li><a href="#multimedia">Multimedia</a></li>
         <li><a href="#telemetria">Telemetría</a></li>
-        <li><a href="#patrocinadores">Partners</a></li>
+        <li><a href="#biografia">Biografía</a></li>
         <li><a href="#galeria">Galería</a></li>
-
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- HERO SECTION CON ESTILO ALPINE -->
-  <header class="driver-hero">
-    <div class="hero-overlay"></div>
+  <!-- HERO SECTION INMERSIVO -->
+  <section class="driver-hero" id="inicio">
     <div class="hero-container">
       <div class="hero-badge">Piloto Oficial 2026</div>
-      <h1 class="hero-title">Franco <br><span class="highlight">Colapinto</span></h1>
-      <p class="hero-subtitle">Argentina &bull; <span class="team-name">Alpine F1 Team</span></p>
-      <div class="driver-number">43</div>
-    </div>
-  </header>
-
-  <!-- SECCIÓN DE ESTADÍSTICAS ANIMADAS -->
-  <section class="stats-section" id="estadisticas">
-    <div class="section-container">
-      <h2 class="section-title">Temporada 2026</h2>
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-value" data-target="12">0</div>
-          <div class="stat-label">Posición del Campeonato</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value" data-target="19">0</div>
-          <div class="stat-label">Puntos Ganados</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value" data-target="12">0</div>
-          <div class="stat-label">Grand Prix Disputados</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value" data-target="6">0</div>
-          <div class="stat-label">Top 10 Finalizados</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REPRODUCTOR DE VIDEO DE STREAMING SEGURO -->
-   <!-- REPRODUCTOR DE VIDEO DE STREAMING RECONFIGURADO CON ENLACES PÚBLICOS -->
-    <!-- SECCIÓN MULTIMEDIA BLINDADA CONTRA BLOQUEOS LOCALES -->
-    <!-- SECCIÓN MULTIMEDIA TOTALMENTE COMPATIBLE CON IMÁGENES -->
-  <section class="video-section" id="videos">
-    <div class="section-container">
-      <h2 class="section-title">Momentos Épicos en Pista</h2>
-      <div class="video-dashboard">
-        
-        <!-- Panel de Reproducción Directa mediante Enlaces de YouTube -->
-        <div class="main-player-wrapper">
-          <div class="video-fallback-card" style="position: relative; width: 100%; aspect-ratio: 16/9; background: #151824; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid var(--glass-border); text-align: center; padding: 2rem;">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">🏎️</div>
-            <h3 style="font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 1rem;" id="videoTitleDisplay">Franco Colapinto's Historic Formula 1 Debut at Monza!</h3>
-            <a id="btnPlayExternal" href="https://youtube.com" target="_blank" class="btn-premium-download" style="padding: 0.8rem 1.8rem; font-size: 0.85rem; text-decoration: none;">
-              ▶️ Reproducir en YouTube Oficial
-            </a>
-          </div>
-        </div>
-
-        <!-- Lista de reproducción lateral con imágenes libres de protección Hotlink -->
-        <div class="video-playlist">
-          
-          <div class="playlist-item active" data-video-url="https://youtube.com">
-            <div class="playlist-thumb">
-              <img src="https://unsplash.com" alt="Debut Monza">
-              <span class="play-icon">&#x25B6;</span>
-            </div>
-            <div class="playlist-meta">
-              <h4>El Debut Histórico en Monza (P12 saliendo desde el fondo)</h4>
-              <p>F1 Official</p>
-            </div>
-          </div>
-
-          <div class="playlist-item" data-video-url="https://youtube.com">
-            <div class="playlist-thumb">
-              <img src="https://unsplash.com" alt="Puntos Azerbaiyán">
-              <span class="play-icon">&#x25B6;</span>
-            </div>
-            <div class="playlist-meta">
-              <h4>Primeros Puntos en F1: Hazaña en las calles de Bakú</h4>
-              <p>F1 Official</p>
-            </div>
-          </div>
-
-          <div class="playlist-item" data-video-url="https://youtube.com">
-            <div class="playlist-thumb">
-              <img src="https://unsplash.com" alt="Largada Singapur">
-              <span class="play-icon">&#x25B6;</span>
-            </div>
-            <div class="playlist-meta">
-              <h4>La increíble largada en el GP de Singapur (Margen milimétrico)</h4>
-              <p>F1 Highlights</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- SECCIÓN DE TELEMETRÍA EN TIEMPO REAL -->
-  <section class="telemetry-section" id="telemetria">
-    <div class="section-container">
-      <h2 class="section-title">Telemetría en Vivo: Alpine A526</h2>
-      <p class="telemetry-status"><span class="live-dot"></span> Transmisión de Datos Satelital Activa</p>
+      <h1 class="hero-title"><span class="highlight">Franco</span><br>Colapinto</h1>
+      <p class="hero-subtitle">Argentina • <span class="team-name">Alpine F1 Team</span></p>
       
-      <div class="telemetry-dashboard">
-        <div class="tel-main-displays">
-          <div class="tel-display-card">
-            <span class="tel-tag">SPEED</span>
-            <div class="tel-big-number"><span id="telSpeed">0</span> <small>KM/H</small></div>
-            <div class="speed-bar-wrapper">
-              <div class="speed-bar-fill" id="speedBar"></div>
-            </div>
+      <!-- Llamado a la Acción (CTA) -->
+      <a href="#telemetria" class="btn-hero-cta">
+        <span class="live-dot-cta"></span> Ver Telemetría en Vivo
+      </a>
+
+      <!-- Gran Foto de Colapinto con Efecto de Brillo -->
+      <img src="colapinto.png" alt="Franco Colapinto" class="hero-driver-img">
+    </div>
+    <div class="driver-number">43</div>
+  </section>
+
+  <!-- SECCIÓN DE ESTADÍSTICAS CYBER-TARJETAS -->
+  <section class="section-container stats-section" id="estadisticas">
+    <h2 class="section-title">Temporada 2026</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value" data-target="12">0</div>
+        <div class="stat-label">Posición del Campeonato</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" data-target="38">0</div>
+        <div class="stat-label">Puntos Ganados</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" data-target="14">0</div>
+        <div class="stat-label">Grand Prix Disputados</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" data-target="8">0</div>
+        <div class="stat-label">Top 10 Finalizados</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD DE VIDEO CON REPRODUCTOR INTERACTIVO -->
+  <section class="section-container" id="multimedia">
+    <h2 class="section-title">Momentos Épicos en Pista</h2>
+    <div class="video-dashboard">
+      <div class="main-player-wrapper">
+        <a id="btnPlayExternal" href="https://youtu.be/h_lIat-V24w" target="_blank" class="btn-premium-download">
+          🏎 <span>▶ Reproducir en YouTube Oficial</span>
+        </a>
+        <div class="player-caption">
+          <h3 id="videoTitleDisplay">Franco Colapinto's Historic Formula 1 Debut at Monza!</h3>
+        </div>
+      </div>
+      <div class="video-playlist">
+        <div class="playlist-item active" data-video-url="https://youtu.be/h_lIat-V24w">
+          <div class="playlist-thumb">
+            <img src="https://img.youtube.com/vi/h_lIat-V24w/0.jpg" alt="Debut Monza">
+            <span class="play-icon">▶</span>
           </div>
-          
-          <div class="tel-display-card text-center">
-            <span class="tel-tag">GEAR</span>
-            <div class="tel-gear-number" id="telGear">N</div>
-            <span class="tel-subtag" id="telRpm">0 RPM</span>
+          <div class="playlist-meta">
+            <h4>El Debut Histórico en Monza (P12 saliendo desde el fondo)</h4>
+            <p>F1 Official</p>
           </div>
         </div>
-
-        <div class="tel-meters-display">
-          <div class="pedal-channel">
-            <div class="pedal-labels">
-              <span>THR (Acelerador)</span>
-              <span id="txtThrottle">0%</span>
-            </div>
-            <div class="pedal-track">
-              <div class="pedal-fill throttle-fill" id="barThrottle"></div>
-            </div>
+        <div class="playlist-item" data-video-url="https://youtu.be/M_lKpt-X34z">
+          <div class="playlist-thumb">
+            <img src="https://img.youtube.com/vi/M_lKpt-X34z/0.jpg" alt="Puntos Azerbaiyán">
+            <span class="play-icon">▶</span>
           </div>
-
-          <div class="pedal-channel">
-            <div class="pedal-labels">
-              <span>BRK (Freno)</span>
-              <span id="txtBrake">0%</span>
-            </div>
-            <div class="pedal-track">
-              <div class="pedal-fill brake-fill" id="barBrake"></div>
-            </div>
+          <div class="playlist-meta">
+            <h4>Primeros Puntos en F1: Hazaña en las calles de Bakú</h4>
+            <p>F1 Official</p>
           </div>
-
-          <div class="g-force-card">
-            <span class="tel-tag">G-FORCE</span>
-            <div class="g-matrix">
-              <div class="g-ball" id="gBall"></div>
-            </div>
-            <div class="g-readout">Lat: <span id="gLat">0.0</span>g | Lon: <span id="gLon">0.0</span>g</div>
+        </div>
+        <div class="playlist-item" data-video-url="https://youtu.be/X_vTpt-L98w">
+          <div class="playlist-thumb">
+            <img src="https://img.youtube.com/vi/X_vTpt-L98w/0.jpg" alt="Largada Singapur">
+            <span class="play-icon">▶</span>
+          </div>
+          <div class="playlist-meta">
+            <h4>La increíble largada en el GP de Singapur (Margen milimétrico)</h4>
+            <p>F1 Highlights</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-     <!-- SECCIÓN DE GALERÍA AUTÓNOMA INTEGRAL (SIN DEPENDENCIAS DE INTERNET) -->
-    <!-- SECCIÓN DE GALERÍA DE FOTOS REALES LOCALES -->
-  <section class="gallery-section" id="galeria">
-    <div class="section-container">
-      <h2 class="section-title">Paddock Gallery</h2>
-      <div class="gallery-grid">
-        
-        <!-- Foto 1: Franco Colapinto Local -->
-        <div class="gallery-item">
-          <img src="franco.jpg" alt="Franco Colapinto Portrait">
-          <div class="gallery-overlay">
-            <span>Franco Colapinto - Perfil</span>
-          </div>
-        </div>
-
-        <!-- Foto 2: Monoplaza Alpine Local -->
-        <div class="gallery-item">
-          <img src="auto.jpg" alt="F1 Race Car Alpine Style">
-          <div class="gallery-overlay">
-            <span>Alpine A526 Monoplaza</span>
-          </div>
-        </div>
-
-        <!-- Foto 3: Casco e Ingeniería Local -->
-        <div class="gallery-item">
-          <img src="casco.jpg" alt="Racing Team Helmet">
-          <div class="gallery-overlay">
-            <span>Casco e Ingeniería de Pista</span>
-          </div>
-        </div>
-
-        <!-- Foto 4: Neumáticos y Boxes Local -->
-        <div class="gallery-item">
-          <img src="boxes.jpg" alt="F1 Garage Tires">
-          <div class="gallery-overlay">
-            <span>Boxes y Competición</span>
-          </div>
-        </div>
-
-      </div>
+  <!-- SECCIÓN TELEMETRÍA PIT WALL -->
+  <section class="section-container telemetry-section" id="telemetria">
+    <h2 class="section-title">Telemetría en Vivo: Alpine A526</h2>
+    <div class="telemetry-status">
+      <span class="live-dot"></span> Transmisión de Datos Satelital Activa
     </div>
-  </section>
+    
+    <div class="telemetry-dashboard">
+      <div class="tel-main-displays">
+        <div class="tel-display-card">
+          <span class="tel-tag">SPEED</span>
+          <div class="tel-big-number"><span id="telSpeed">0</span> <small>KM/H</small></div>
+          <div class="speed-bar-wrapper">
+            <div class="speed-bar-fill" id="speedBar"></div>
+          </div>
+        </div>
+        <div class="tel-display-card">
+          <span class="tel-tag">GEAR</span>
+          <div class="tel-gear-number" id="telGear">N</div>
+          <div class="tel-subtag" id="telRpm">0 RPM</div>
+        </div>
+      </div>
 
-
-
-
-  <!-- BIOGRAFÍA ESTILIZADA -->
-  <section class="bio-section" id="biografia">
-    <div class="section-container bio-layout">
-      <div class="bio-content">
-        <h2 class="section-title">El Regreso a la Grilla</h2>
-        <p class="bio-text">
-          Franco Colapinto ha irrumpido con fuerza en el paddock mundial de la Fórmula 1. Tras debutar de manera espectacular con Williams a finales de 2024, su talento innato llamó inmediatamente la atención de la escudería <strong>Alpine</strong>.
-        </p>
-        <p class="bio-text">
-          Consolidado como piloto oficial para la <strong>temporada 2026</strong>, el oriundo de Buenos Aires continúa rompiendo récords de velocidad y sumando puntos clave en el campeonato mundial, demostrando una madurez técnica impecable bajo presión extrema.
-        </p>
-        <div class="quote-box">
-          <p class="quote-quote">"I WILL GIVE IT MY ALL TO DELIVER THE BEST POSSIBLE RESULTS."</p>
-          <cite class="quote-author">&mdash; Franco Colapinto</cite>
+      <div class="tel-meters-display">
+        <div class="pedal-channel">
+          <div class="pedal-labels"><span>THR (Acelerador)</span><span id="txtThrottle">0%</span></div>
+          <div class="pedal-track"><div class="pedal-fill throttle-fill" id="barThrottle"></div></div>
+        </div>
+        <div class="pedal-channel">
+          <div class="pedal-labels"><span>BRK (Freno)</span><span id="txtBrake">0%</span></div>
+          <div class="pedal-track"><div class="pedal-fill brake-fill" id="barBrake"></div></div>
+        </div>
+        <div class="g-force-card">
+          <span class="tel-tag">G-FORCE</span>
+          <div class="g-matrix"><div class="g-ball" id="gBall"></div></div>
+          <div class="g-readout">Lat: <span id="gLat">0.0</span>g | Lon: <span id="gLon">0.0</span>g</div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- SECCIÓN BIOGRAFÍA & CITAS -->
+  <section class="section-container" id="biografia">
+    <h2 class="section-title">El Regreso a la Grilla</h2>
+    <div class="bio-layout">
+      <p class="bio-text">
+        Franco Colapinto ha irrumpido con fuerza en el paddock mundial de la Fórmula 1. Tras debutar de manera espectacular con Williams a finales de 2024, su talento innato llamó inmediatamente la atención de la escudería <strong>Alpine</strong>.
+      </p>
+      <p class="bio-text">
+        Consolidado como piloto oficial para la <strong>temporada 2026</strong>, el oriundo de Buenos Aires continúa rompiendo récords de velocidad y sumando puntos clave en el campeonato mundial, demostrando una madurez técnica impecable bajo presión extrema.
+      </p>
+            <!-- SECCIÓN BIOGRAFÍA (Existente en tu archivo) -->
+      <div class="quote-box">
+        <p class="quote-quote">"I WILL GIVE IT MY ALL TO DELIVER THE BEST POSSIBLE RESULTS."</p>
+        <cite class="quote-author">— Franco Colapinto</cite>
+      </div>
+
+      <!-- NUEVO BLOCK: Redes Sociales Oficiales de Franco Colapinto -->
+      <div class="driver-socials-wrapper">
+        <h4 class="socials-title">Sigue las transmisiones del piloto:</h4>
+        <div class="socials-links-grid">
+          <a href="https://instagram.com" target="_blank" class="btn-social-card insta-glow">
+            <span class="social-icon">📸</span> Instagram
+          </a>
+          <a href="https://x.com" target="_blank" class="btn-social-card twitter-glow">
+            <span class="social-icon">𝕏</span> X / Twitter
+          </a>
+          <a href="https://tiktok.com" target="_blank" class="btn-social-card tiktok-glow">
+            <span class="social-icon">🎵</span> TikTok
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+   <!-- SECCIÓN DE GALERÍA DE FOTOS PREMIUM (PADDOCK) -->
+  <section class="section-container gallery-section" id="galeria">
+    <h2 class="section-title">Paddock Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <!-- Reemplazada por tu archivo de imagen local -->
+        <img src="franco.jpg" alt="Franco Colapinto Portrait">
+        <div class="gallery-overlay"><span>Franco Colapinto - Perfil</span></div>
+      </div>
+      <div class="gallery-item">
+        <!-- Reemplazada por tu archivo de imagen local -->
+        <img src="auto.jpg" alt="F1 Race Car Alpine Style">
+        <div class="gallery-overlay"><span>Alpine A526 Monoplaza</span></div>
+      </div>
+      <div class="gallery-item">
+        <!-- Reemplazada por tu archivo de imagen local -->
+        <img src="casco.jpg" alt="Racing Team Helmet">
+        <div class="gallery-overlay"><span>Casco e Ingeniería de Pista</span></div>
+      </div>
+      <div class="gallery-item">
+        <!-- Reemplazada por tu archivo de imagen local -->
+        <img src="boxes.jpg" alt="F1 Garage Tires">
+        <div class="gallery-overlay"><span>Boxes y Competición</span></div>
+      </div>
+    </div>
+  </section>
 
 
-  <!-- PATROCINADORES -->
-  <footer class="f1-footer" id="patrocinadores">
+    
+
+    <!-- FOOTER & LOGOS PREMIUM DE PATROCINADORES CON ENLACES -->
+  <footer class="f1-footer">
     <div class="footer-container">
-      <div class="partners-block">
-        <h3 class="partners-title">Official Partners</h3>
-        <div class="partners-grid">
-          <div class="partner-card"><span>LVMH</span></div>
-          <div class="partner-card"><span>Pirelli</span></div>
-          <div class="partner-card"><span>Aramco</span></div>
-          <div class="partner-card"><span>AWS</span></div>
-          <div class="partner-card"><span>Lenovo</span></div>
-          <div class="partner-card"><span>DHL</span></div>
-          <div class="partner-card"><span>Qatar Airways</span></div>
-          <div class="partner-card"><span>Globant</span></div>
-        </div>
+      <h3 class="partners-title">Official Partners</h3>
+      <div class="partners-grid">
+        <!-- LVMH Oficial -->
+        <a href="https://www.lvmh.com/en" target="_blank" class="partner-card"><span>LVMH</span></a>
+        
+        <!-- Pirelli Tyres -->
+        <a href="https://www.pirelli.com/tyres/en-ww/car/homepage" target="_blank" class="partner-card"><span>Pirelli</span></a>
+        
+        <!-- Aramco Energy -->
+        <a href="https://www.aramco.com/en" target="_blank" class="partner-card"><span>Aramco</span></a>
+        
+        <!-- AWS Cloud -->
+        <a href="https://amazon.com" target="_blank" class="partner-card"><span>AWS</span></a>
+        
+        <!-- Lenovo Technology -->
+        <a href="https://lenovo.com" target="_blank" class="partner-card"><span>Lenovo</span></a>
+        
+        <!-- DHL Express -->
+        <a href="https://dhl.com" target="_blank" class="partner-card"><span>DHL</span></a>
+        
+        <!-- Globant AI Powerhouse -->
+        <a href="https://www.globant.com/" target="_blank" class="partner-card"><span>Globant</span></a>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Formula One World Championship Limited. Clon de Desarrollo Refinado.</p>
+        &copy; 2026 Formula One World Championship Limited. Clon de Desarrollo Refinado.
       </div>
     </div>
   </footer>
 
+
+  <!-- MODAL FLOTANTE DE AGRADECIMIENTO (CYBER CONFIRMATION) -->
+  <div id="thankYouModal" class="cyber-modal-wrapper">
+    <div class="cyber-modal-card">
+      <div class="modal-icon-glow">✔</div>
+      <h3>Transmisión Exitosa</h3>
+      <p>Los datos han sido enviados al Pit Wall. Nos pondremos en comunicación mediante tu canal de telemetría a la brevedad.</p>
+      <button id="closeModalBtn" class="btn-hero-cta modal-close-btn">Cerrar Canal</button>
+    </div>
+  </div>
+
+  <!-- Lógica de Control e Interacciones -->
   <script src="script.js"></script>
 </body>
 </html>
